@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
-var dbURI = process.env.MONGODB_URI || 'mongodb://localhost/Mekanbul';
-
+// test? yerine /test? olduğundan emin ol
+var dbURI = 'mongodb+srv://nisa:Stc.1617@nisa.hvrljav.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(dbURI);
 
 // Bağlandığında konsola bağlantı bilgilerini yazdır.
@@ -26,4 +26,3 @@ process.on("SIGINT", function () {
 });
 
 require("./venue");
-// Bu son satır, veritabanı şemasını tanımlayan "venue" modelini yükler.
