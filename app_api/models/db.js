@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-// test? yerine /test? olduğundan emin ol
 var dbURI = 'mongodb+srv://nisa:Stc.1617@nisa.hvrljav.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(dbURI);
 

@@ -71,18 +71,17 @@ const addVenue = async function (req, res) {
 // [3] Tek Bir Mekanı Getir
 const getVenue = async function (req, res) {
     try {
-        const venue = await Venue.findById(req.params.mekanid).exec();
+
+        const venue = await Venue.findById(req.params.venueid).exec();
         if (!venue) {
             createResponse(res, 404, { "message": "Mekan bulunamadı." });
             return;
         }
         createResponse(res, 200, venue);
     } catch (err) {
-        console.error("Mekan Getirme Hatası:", err);
-        createResponse(res, 404, { "message": "Geçersiz mekan ID'si veya sunucu hatası." });
+        createResponse(res, 404, { "message": "ID hatası veya mekan yok." });
     }
 };
-
 // [4] Mekan Güncelle 
 const updateVenue = async function (req, res) {
     createResponse(res, 200, { "status": "Güncelleme özelliğini yakında ekleyeceğim." });
