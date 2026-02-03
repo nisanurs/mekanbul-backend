@@ -15,4 +15,5 @@ router.post('/venues/:venueid/comments', ctrlComments.addComment);
 router.get('/venues/:venueid/comments/:commentid', ctrlComments.getComment);
 router.delete('/venues/:venueid/comments/:commentid', ctrlComments.deleteComment); // Yorum silme
 
+
 module.exports = router;

@@ -2,19 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
-var express = require('express');
-var router = express.Router();
-var ctrlVenues = require('../controller/VenueController'); // Controller yolun
 
-// Buradaki ":venueid" ismi, Controller'daki "req.params.venueid" ile AYNI olmalı
-router.get('/venues/:venueid', ctrlVenues.getVenue);
-router.get('/venues', ctrlVenues.listVenues);
-router.post('/venues', ctrlVenues.addVenue);
-router.delete('/venues/:venueid', ctrlVenues.deleteVenue);
+router.post('/venues/:venueid/reviews', function (req, res) {
+  // Backend terminalinde verinin geldiğini görmek için:
+  console.log("Yorum verisi ulaştı:", req.body);
 
+  // React tarafındaki .then() bloğunun çalışması için bu yanıt şarttır:
+  res.status(201).json({
+    "status": "success",
+    "message": "Yorum başarıyla kaydedildi"
+  });
+});
 module.exports = router;
